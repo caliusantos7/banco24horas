@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Receba a quantidade de cédula de R$ 10,00
+b) Receba a quantidade de cédula de R$ 50,00
+c) Receba a quantidade de cédula de R$ 100,00
+d) Tenha um botão “iniciar” que quando clicado, calcula o valor total disponível e
+inicializa a segunda fase. -->
+
+    Digite a quantidade de cédulas de 100 Reais <input id="ipt_cem" type="text"> <br>
+    Digite a quantidade de cédulas de 50 Reais  <input id="ipt_cinquenta" type="text"> <br>
+    Digite a quantidade de cédulas de 10 Reais  <input id="ipt_dez" type="text"> <br>
+    Digite o valor que queira sacar <input id="ipt_saque" type="text"> <br>
+
+    <br>
+    <button onclick="iniciar()">iniciar</button>
+    <div id="div_mens"></div>
+
+     <br>
+    As notas disponíveis são: <br>
+    10 R$ <br>
+    50 R$ <br>
+    100 R$ <br>
+
+    <button onclick="solicitarsaque()"> solicitar saque </button>
+
+
+</body>
+</html>
+
+<script>
+     var cem =  100 
+     var cinguenta =  50
+     var dez =   10
+
+     function iniciar() {
+        var usarcem = ipt_cem.value * cem 
+        var usarcinguenta = ipt_cinguenta.value * cinguenta
+        var usardez = ipt_dez.value * dez
+        var saldo_total = Number(usarcem) + Number(usarcinguenta) + Number(usardez)
+         
+        }
+
+        function solicitarsaque() {
+             var saque = ipt_saque.value
+             var cedulascem = Math.floor(saque/100);
+             var cedulascinquenta = Math.floor(saque/50);
+             var cedulasdez = Math.floor(saque/10);
+             
+            if (saque > 0 ) {
+                if (saque > saldo_total) {
+                    alert(`Montante disponível não atende a solicitação`);
+                } else if (saque > 0 && saque <= saldo_total ) {
+                    div_mens.innerHTML = `Valor não possível devido às notas
+disponíveis`
+                } else if () {
+                    
+                }
+            } else {
+                alert(`Não
+é possível sacar 0 ou menos`)
+                
+            }
+        }
+</script>
